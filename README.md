@@ -59,7 +59,8 @@ apt download libgtk-3-0
 ```
 5: install first integration app: cros-ui-config
 ```ruby
-apt install cros-ui-config && dpkg --configure -a
+apt install cros-ui-config
+dpkg --configure -a
 ```
 5: install gtk-3-0
 ```ruby
