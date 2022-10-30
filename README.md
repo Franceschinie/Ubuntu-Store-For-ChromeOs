@@ -76,5 +76,5 @@ apt install ./cros-guest-tools_0.32_all.deb
 ```
 7: remove files
 ```ruby
-rm -rf libgtk-3-0_3.24.34-3ubuntu2_amd64.deb
+rm -rf libgtk-3-0_3.24.34-3ubuntu2_amd64.deb cros-guest-tools_0.32_all.deb cros-ui-config_0.15_all.deb 
 ```
