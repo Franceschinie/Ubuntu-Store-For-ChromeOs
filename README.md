@@ -53,22 +53,26 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
 ```ruby
 apt update
 ```
-4: download libgtk
+4: download packages
 ```ruby
 apt download libgtk-3-0
-```
-5: install first integration app: cros-ui-config
-```ruby
-apt install cros-ui-config
-dpkg --configure -a
+apt download cros-ui-config
+apt download cros-guest-tools
 ```
 5: install gtk-3-0
 ```ruby
-apt install gtk-3-0 && dpkg --configure -a && dpkg --force-overwrite -i libgtk-3-0_3.24.34-3ubuntu2_amd64.deb 
+apt install libgtk-3-0
+dpkg --configure -a
+```
+ 5: install first integration app: cros-ui-config
+```ruby
+apt install cros-ui-config
+dpkg --configure -a 
+dpkg --force-overwrite -i cros-ui-config_0.15_all.deb 
 ```
 6: install second integration app: cros-guest-tools
 ```ruby
-apt install cros-guest-tools
+apt install ./cros-guest-tools_0.32_all.deb
 ```
 7: remove files
 ```ruby
