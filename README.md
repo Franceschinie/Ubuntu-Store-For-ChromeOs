@@ -65,7 +65,7 @@ dpkg --configure -a
 ```
  6: install first integration app: cros-ui-config
 ```ruby
-apt install ./cros-ui-config
+apt install ./cros-ui-config_0.15_all.deb 
 dpkg --configure -a 
 dpkg --force-overwrite -i cros-ui-config_0.15_all.deb 
 ```
