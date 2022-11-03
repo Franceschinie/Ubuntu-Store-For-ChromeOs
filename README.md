@@ -23,7 +23,7 @@ now you can see
 (termina) chronos@localhost ~ $ 
 now type
 ```ruby
-lxc launch ubuntu:22.10 termina --debug
+lxc launch ubuntu:22.10 penguin --debug
 ```
 wait the vm download and creation
 execute the new vm 
