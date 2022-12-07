@@ -12,6 +12,10 @@ now you can see
 (termina) chronos@localhost ~ $ 
 now type
 ```ruby
+lxc stop -f penguin
+lxc delete penguin
+```
+```ruby
 lxc launch ubuntu:22.10 penguin --debug
 ```
 wait the vm download and creation
