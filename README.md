@@ -1,20 +1,9 @@
 # switch-your-ChromeOS-Linux-from-Debian-to-Ubuntu
+setup crostini linux 
 press ctrl + alt + t
 now you can see 
 crosh> copy 
 and paste this command on crosh
-```ruby
-vmc list   
-```
-you see : /vm name/ (tot size, min shrinkable size, disk type, parse)
-destroy al virtual machines using
-```ruby
-vmc destroy /vm name/
-```
-then create one
-```ruby
-vmc create termina
-```
 start your vm
 ```ruby
 vmc start --enable-gpu --writable-rootfs termina
