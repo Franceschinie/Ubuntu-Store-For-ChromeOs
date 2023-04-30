@@ -16,7 +16,7 @@ lxc stop -f penguin
 lxc delete penguin
 ```
 ```ruby
-lxc launch ubuntu:22.10 penguin --debug
+lxc launch ubuntu:23.04 penguin --debug
 ```
 wait the vm download and creation
 execute the new vm 
@@ -50,6 +50,7 @@ apt update
 ```ruby
 apt download cros-ui-config
 apt download cros-guest-tools
+apt download cros-im
 ```
 5: install gtk-3-0
 ```ruby
@@ -62,11 +63,19 @@ apt install ./cros-ui-config_0.15_all.deb
 dpkg --configure -a 
 dpkg --force-overwrite -i cros-ui-config_0.15_all.deb 
 ```
+7: modify cros-im 
+```ruby
+dpkg-deb -x  cros-im_46875_amd64.deb crosim
+dpkg-deb --control  cros-im_46875_amd64.deb crosim/DEBIAN
+sed '/qtbase-abi-5-15-2/d' crosim/DEBIAN/control
+dpkg -b crosim crosim.deb
+apt-get install ./crosim.deb
+```
 7: install second integration app: cros-guest-tools
 ```ruby
-apt install ./cros-guest-tools_0.32_all.deb
+apt install ./cros-guest-tools_0.34_all.deb
 ```
 8: remove files
 ```ruby
-rm -rf cros-guest-tools_0.32_all.deb cros-ui-config_0.15_all.deb 
+rm -rf cros-guest-tools_0.34_all.deb cros-ui-config_0.15_all.deb 
 ```
