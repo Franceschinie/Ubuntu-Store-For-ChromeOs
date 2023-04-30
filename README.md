@@ -67,15 +67,16 @@ dpkg --force-overwrite -i cros-ui-config_0.15_all.deb
 ```ruby
 dpkg-deb -x  cros-im_46875_amd64.deb crosim
 dpkg-deb --control  cros-im_46875_amd64.deb crosim/DEBIAN
-sed '/qtbase-abi-5-15-2/d' crosim/DEBIAN/control
+sed -i 's/, qtbase-abi-5-15-2//g' crosim/DEBIAN/control
 dpkg -b crosim crosim.deb
 apt-get install ./crosim.deb
 ```
-7: install second integration app: cros-guest-tools
+8: install second integration app: cros-guest-tools
 ```ruby
 apt install ./cros-guest-tools_0.34_all.deb
 ```
-8: remove files
+9: remove files
 ```ruby
-rm -rf cros-guest-tools_0.34_all.deb cros-ui-config_0.15_all.deb 
+rm -rf cros-guest-tools_0.34_all.deb cros-ui-config_0.15_all.deb cros-im cros-im_46875_amd64.deb crosim crosim.deb 
 ```
+now you can tipe exit three times, reboot and use ubuntu on crostini
