@@ -25,8 +25,8 @@ echo "6 install apps"
 sudo apt install ./cros-ui-config_*_all.deb -y
 sudo dpkg --configure -a 
 sudo dpkg --force-overwrite -i cros-ui-config_*_all.deb 
-sudo apt-get install ./crosim.deb
-sudo apt install ./cros-guest-tools_*_all.deb
+sudo apt install ./crosim.deb -y
+sudo apt install ./cros-guest-tools_*_all.deb -y
 echo "7 cleanup and reboot container"
 sudo rm -rf cros-guest-tools_*_all.deb cros-ui-config_*_all.deb cros-im cros-im_*_amd64.deb crosim crosim.deb 
 sudo reboot
