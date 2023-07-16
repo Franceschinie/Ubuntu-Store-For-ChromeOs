@@ -2,7 +2,8 @@
 lxc stop -f penguin
 lxc delete penguin
 lxc launch ubuntu:23.04 penguin --debug < /dev/null
-lxc exec penguin -- echo "#!/bin/bash
+lxc exec penguin -- sudo touch 1.sh
+lxc exec penguin -- sudo echo "#!/bin/bash
 echo "Ubuntu on crostini integration setup"
 echo "1 starting and upgrading package manager"
 sudo apt update
