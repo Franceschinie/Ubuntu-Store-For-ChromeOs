@@ -12,6 +12,6 @@ now you can see
 (termina) chronos@localhost ~ $ 
 now type and wait the ubuntu install and config
 ```ruby
-bash <(curl https://raw.githubusercontent.com/Franceschinie/switch-your-ChromeOS-Linux-from-Debian-to-Ubuntu/main/UbuntuinstallerfroVMC.sh)
+bash <<(curl -s https://raw.githubusercontent.com/Franceschinie/switch-your-ChromeOS-Linux-from-Debian-to-Ubuntu/main/UbuntuinstallerfroVMC.sh)
 ```
 reboot system 
