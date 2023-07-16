@@ -26,4 +26,3 @@ lxc exec penguin -- sudo apt install gnome-software -y
 lxc exec penguin -- sudo apt install ./cros-guest-tools_*_all.deb -y
 lxc exec penguin -- sudo rm -rf cros-guest-tools_*_all.deb cros-ui-config_*_all.deb cros-im cros-im_*_amd64.deb crosim crosim.deb 
 lxc exec penguin -- sudo reboot
-exit
