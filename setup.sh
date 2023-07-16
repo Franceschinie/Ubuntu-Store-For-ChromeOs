@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo "Ubuntu on crostini integration setup"
 echo "1 starting and upgrading package manager"
 sudo apt update
