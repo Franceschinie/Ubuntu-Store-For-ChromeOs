@@ -12,7 +12,11 @@ now you can see
 (termina) chronos@localhost ~ $ 
 now type and wait the ubuntu install
 ```ruby
-curl -s https://raw.githubusercontent.com/Franceschinie/switch-your-ChromeOS-Linux-from-Debian-to-Ubuntu/main/UbuntuinstallerfroVMC.sh | bash -s 
+curl -s https://raw.githubusercontent.com/Franceschinie/switch-your-ChromeOS-Linux-from-Debian-to-Ubuntu/main/UbuntuinstallerfroVMC.sh | bash -s
+```
+start ubuntu
+```ruby
+lxc exec penguin -- bash
 ```
 now type and wait the installation of integrated ChromeOs apps
 ```ruby
