@@ -14,12 +14,12 @@ now type and wait the ubuntu install
 ```ruby
 curl -s https://raw.githubusercontent.com/Franceschinie/Ubuntu-Store-For-ChromeOs/main/1.sh | bash -s
 ```
-start ubuntu
+start container
 ```ruby
 lxc exec penguin -- bash
 ```
 now type and wait the installation of integrated ChromeOs apps
 ```ruby
-curl -s https://raw.githubusercontent.com/Franceschinie/switch-your-ChromeOS-Linux-from-Debian-to-Ubuntu/main/setup.sh | bash -s
+curl -s https://raw.githubusercontent.com/Franceschinie/Ubuntu-Store-For-ChromeOs/main/2.sh | bash -s
 ```
 reboot system 
