@@ -10,8 +10,12 @@ vmc start --enable-gpu --writable-rootfs termina
 ```
 now you can see
 (termina) chronos@localhost ~ $ 
-now type and wait the ubuntu install and config
+now type and wait the ubuntu install
 ```ruby
 curl -s https://raw.githubusercontent.com/Franceschinie/switch-your-ChromeOS-Linux-from-Debian-to-Ubuntu/main/UbuntuinstallerfroVMC.sh | bash -s 
+```
+now type and wait the installation of integrated ChromeOs apps
+```ruby
+curl -s https://raw.githubusercontent.com/Franceschinie/switch-your-ChromeOS-Linux-from-Debian-to-Ubuntu/main/setup.sh | bash -s
 ```
 reboot system 
