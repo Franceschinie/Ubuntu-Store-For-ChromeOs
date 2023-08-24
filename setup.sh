@@ -10,23 +10,53 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78BD65473CB3BD13
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
 echo "3 download packages"
 sudo apt update
-sudo apt download cros-ui-config
-sudo apt download cros-guest-tools
-sudo apt download cros-im
+sudo apt download cros-ui-config cros-guest-tools cros-im cros-adapta cros-apt-config cros-garcon cros-host-fonts cros-notificationd cros-sommelier cros-logging cros-pipe-config cros-sommelier-config cros-sudo-config cros-systemd-overrides cros-vmstat-metrics cros-wayland gnome-software
 echo "4 install libraries"
 sudo NEEDRESTART_MODE=a apt install libgtk-3-0 -y
 sudo NEEDRESTART_MODE=a dpkg --configure -a
+sudo apt satisfy cros-ui-config cros-garcon cros-sommelier cros-pipe-config cros-guest-tools gnome-software
 echo "5 making apps compatibile with ubuntu"
 sudo dpkg-deb -x  cros-im_*_amd64.deb crosim
 sudo dpkg-deb --control  cros-im_*_amd64.deb crosim/DEBIAN
 sudo sed -i 's/, qtbase-abi-5-15-2//g' crosim/DEBIAN/control
 sudo dpkg -b crosim crosim.deb
 echo "6 install apps"
+echo "1/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-adapta_*_all.deb -y
+echo "2/16"
 sudo NEEDRESTART_MODE=a apt install ./cros-ui-config_*_all.deb -y
 sudo dpkg --configure -a 
 sudo dpkg --force-overwrite -i cros-ui-config_*_all.deb 
-sudo apt install ./crosim.deb -y
+echo "3/16"
+sudo NEEDRESTART_MODE=a apt install ./crosim.deb -y
+echo "4/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-apt-config_*_all.deb -y
+echo "4/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-garcon_*_all.deb -y
+echo "6/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-host-fonts_*_all.deb -y
+echo "7/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-notificationd_*_all.deb -y
+echo "8/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-sommelier_*_all.deb -y
+echo "9/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-logging_*_all.deb -y
+echo "10/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-pipe-config_*_all.deb -y
+echo "11/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-sommelier-config_*_all.deb -y
+echo "12/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-sudo-config_*_all.deb -y
+echo "13/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-systemd-overrides_*_all.deb -y
+echo "14/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-vmstat-metrics_*_all.deb -y
+echo "15/16"
+sudo NEEDRESTART_MODE=a apt install ./cros-wayland_*_all.deb -y
+echo "16/16"
 sudo NEEDRESTART_MODE=a apt install ./cros-guest-tools_*_all.deb -y
+echo "7 install gui store"
+sudo NEEDRESTART_MODE=a apt install ./gnome-software_*_amd64.deb -y
 echo "7 cleanup and reboot container"
-sudo rm -rf cros-guest-tools_*_all.deb cros-ui-config_*_all.deb cros-im cros-im_*_amd64.deb crosim crosim.deb 
+sudo rm -rf /root/*
 sudo reboot
