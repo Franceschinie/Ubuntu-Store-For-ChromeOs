@@ -70,9 +70,9 @@ sudo NEEDRESTART_MODE=a apt install ./cros-pulse-config_*_all.deb -y
 echo "17/19"
 sudo NEEDRESTART_MODE=a apt install ./cros-guest-tools_*_all.deb -y
 echo "18/19"
-sudo NEEDRESTART_MODE=a apt install ./cros-tast-test_*_all.deb -y
+sudo NEEDRESTART_MODE=a apt install ./cros-tast-tests_*_all.deb -y
 echo "19/19"
-sudo NEEDRESTART_MODE=a apt install ./cros-fstp_*_all.deb -y
+sudo NEEDRESTART_MODE=a apt install ./cros-sftp_*_all.deb -y
 echo "10 install gui store"
 sudo NEEDRESTART_MODE=a apt install ./gnome-software_*_amd64.deb -y
 echo "11 cleanup and reboot container"
