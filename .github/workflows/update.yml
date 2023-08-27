@@ -27,7 +27,7 @@ jobs:
 
 
       # Runs a set of commands using the runners shell
-      - name: 1
+      - name: 
         run: |
           sudo cp 2.sh resuorces/cros
           cd resuorces/cros
