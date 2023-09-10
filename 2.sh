@@ -11,7 +11,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78BD65473CB3BD13
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
 echo "4 download packages from google server"
 sudo apt update
-sudo apt download cros-ui-config cros-guest-tools cros-im cros-adapta cros-apt-config cros-garcon cros-host-fonts cros-notificationd cros-sommelier cros-logging cros-pipe-config cros-sommelier-config cros-sudo-config cros-systemd-overrides cros-vmstat-metrics cros-wayland cros-tast-tests cros-sftp cros-pulse-config
+sudo apt download cros-ui-config cros-guest-tools cros-im cros-adapta cros-apt-config cros-garcon cros-host-fonts cros-notificationd cros-sommelier cros-logging cros-pipe-config cros-sommelier-config cros-sudo-config cros-systemd-overrides cros-vmstat-metrics cros-wayland cros-tast-tests cros-sftp cros-pulse-config cros-xdg-desktop-portal
 echo "5 download ubuntu store"
 sudo apt download gnome-software
 echo "6 install deps from ubuntu server"
@@ -34,46 +34,48 @@ sudo NEEDRESTART_MODE=a apt install mesa-vdpau-drivers -y
 echo "5/5"
 sudo NEEDRESTART_MODE=a apt install mesa-vulkan-drivers -y
 echo "9 install apps"
-echo "1/19"
+echo "1/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-adapta_*_all.deb -y
-echo "2/19"
+echo "2/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-ui-config_*_all.deb -y
 sudo dpkg --configure -a 
 sudo dpkg --force-overwrite -i cros-ui-config_*_all.deb 
-echo "3/19"
+echo "3/20"
 sudo NEEDRESTART_MODE=a apt install ./1.deb -y
-echo "4/19"
+echo "4/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-apt-config_*_all.deb -y
-echo "4/19"
+echo "4/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-garcon_*_all.deb -y
-echo "6/19"
+echo "6/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-host-fonts_*_all.deb -y
-echo "7/19"
+echo "7/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-notificationd_*_all.deb -y
-echo "8/19"
+echo "8/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-sommelier_*_all.deb -y
-echo "9/19"
+echo "9/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-logging_*_all.deb -y
-echo "10/19"
+echo "10/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-pipe-config_*_all.deb -y
-echo "11/19"
+echo "11/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-sommelier-config_*_all.deb -y
-echo "12/19"
+echo "12/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-sudo-config_*_all.deb -y
-echo "13/19"
+echo "13/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-systemd-overrides_*_all.deb -y
-echo "14/19"
+echo "14/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-vmstat-metrics_*_all.deb -y
-echo "15/19"
+echo "15/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-wayland_*_all.deb -y
-echo "16/19"
+echo "16/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-pulse-config_*_all.deb -y
-echo "17/19"
+echo "17/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-guest-tools_*_all.deb -y
-echo "18/19"
+echo "18/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-tast-tests_*_all.deb -y
-echo "19/19"
+echo "19/20"
 sudo NEEDRESTART_MODE=a apt install ./cros-sftp_*_all.deb -y
+echo "20/20"
+sudo NEEDRESTART_MODE=a apt install ./cros-xdg-desktop-portal_*_all.deb -y
 echo "10 install gui store"
 sudo NEEDRESTART_MODE=a apt install ./gnome-software_*_amd64.deb -y
 echo "11 cleanup and reboot container"
