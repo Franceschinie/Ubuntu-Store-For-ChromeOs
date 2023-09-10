@@ -3,12 +3,13 @@ echo "Ubuntu store installer fro crostini (11 functions)"
 echo "1 starting and upgrading package manager"
 sudo apt update
 sudo NEEDRESTART_MODE=a apt upgrade -y
-echo "2 add sources and keys"
-sudo echo "deb https://storage.googleapis.com/cros-packages bullseye main" > /etc/apt/sources.list.d/cros.list
-if [ -f /dev/.cros_milestone ]; then sudo sed -i "s?packages?packages/$(cat /dev/.cros_milestone)?" /etc/apt/sources.list.d/cros.list; fi
+echo "2 add apt sources"
+sudo wget https://raw.githubusercontent.com/Franceschinie/Ubuntu-Store-For-ChromeOs/main/cros.list 
+sudo cp cros.list /etc/apt/sources.list.d/
+echo "3 add keys"
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78BD65473CB3BD13
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
-echo "3 download packages from google server"
+echo "4 download packages from google server"
 sudo apt update
 sudo apt download cros-ui-config cros-guest-tools cros-im cros-adapta cros-apt-config cros-garcon cros-host-fonts cros-notificationd cros-sommelier cros-logging cros-pipe-config cros-sommelier-config cros-sudo-config cros-systemd-overrides cros-vmstat-metrics cros-wayland cros-tast-tests cros-sftp cros-pulse-config
 echo "5 download ubuntu store"
