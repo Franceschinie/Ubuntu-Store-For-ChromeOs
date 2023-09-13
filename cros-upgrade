@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "upgrade ChromeOs integration"
 sudo wget https://raw.githubusercontent.com/Franceschinie/Ubuntu-Store-For-ChromeOs/main/cros.list 
 sudo cp cros.list /etc/apt/sources.list.d/
