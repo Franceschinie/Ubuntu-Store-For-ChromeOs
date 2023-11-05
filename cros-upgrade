@@ -2,6 +2,4 @@
 echo "upgrade ChromeOs integration"
 sudo wget https://raw.githubusercontent.com/Franceschinie/Ubuntu-Store-For-ChromeOs/main/cros.list 
 sudo cp cros.list /etc/apt/sources.list.d/
-sudo apt update 
-sudo NEEDRESTART_MODE=a apt upgrade -y
 rm -rf cros.list
